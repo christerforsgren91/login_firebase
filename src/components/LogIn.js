@@ -7,8 +7,8 @@ const LogIn = () => {
   const emailRef = useRef()
   const passwordRef = useRef()
   const { login } = useAuth()
-  const [ error, setError ] = useState('')
-  const [ loading, setLoading ] = useState(false)
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
   const history = useHistory()
 
   async function handleSubmit(e) {
@@ -31,7 +31,7 @@ const LogIn = () => {
         <Card.Body>
           <h2 className='text-center mb-4'>Logga In</h2>
           {error && <Alert variant='danger'>{error}</Alert>}
-          <Form onSubmit={handleSubmit} >
+          <Form onSubmit={handleSubmit}>
             <Form.Group id='email'>
               <Form.Label>Email</Form.Label>
               <Form.Control type='email' ref={emailRef} required />
@@ -54,4 +54,3 @@ const LogIn = () => {
 }
 
 export default LogIn
-
