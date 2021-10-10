@@ -6,9 +6,9 @@ const SignUp = () => {
   const emailRef = useRef()
   const passwordRef = useRef()
   const passwordConfirmRef = useRef()
-  const { signup, currentUser } = useAuth()
-  const [error, setError] = useState('')
-  const [loading, setLoading] = useState(false)
+  const { signup } = useAuth()
+  const [ error, setError ] = useState('')
+  const [ loading, setLoading ] = useState(false)
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -32,7 +32,6 @@ const SignUp = () => {
       <Card>
         <Card.Body>
           <h2 className='text-center mb-4'>Registrera</h2>
-          {currentUser && currentUser.email}
           {error && <Alert variant='danger'>{error}</Alert>}
           <Form onSubmit={handleSubmit} >
             <Form.Group id='email'>
